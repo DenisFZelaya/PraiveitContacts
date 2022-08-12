@@ -2,6 +2,7 @@ package com.example.praiveitcontacts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -38,5 +39,10 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void Registro (View v){
+        Intent RegistroPage = new Intent (LoginActivity.this, RegistroActivity.class);
+        startActivity(RegistroPage);
     }
 }
