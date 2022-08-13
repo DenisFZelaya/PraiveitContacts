@@ -13,7 +13,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         DatabaseHelper db = new DatabaseHelper(MainActivity.this);
-
-       // db.notify();
+    db.getAllContactos();
+    db.OpenDB();
     }
+
 }

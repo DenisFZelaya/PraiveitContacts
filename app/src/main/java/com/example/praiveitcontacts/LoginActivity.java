@@ -26,6 +26,9 @@ public class LoginActivity extends AppCompatActivity {
         buttonLoguin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 try {
+                    Intent MainPage = new Intent (LoginActivity.this, MainActivity.class);
+                    startActivity(MainPage);
+
                     if(etUsu.getText().length() < 1){
                         etUsu.setBackgroundColor(Color.parseColor("#ffb6c1"));
                     }
