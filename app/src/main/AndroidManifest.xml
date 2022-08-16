@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PraiveitContacts">
         <activity
+            android:name=".CreditosActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegistroActivity"
             android:exported="false" />
         <activity
@@ -17,12 +20,13 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false" />
     </application>
 
 </manifest>
