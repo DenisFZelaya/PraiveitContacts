@@ -8,6 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 import androidx.annotation.Nullable;
 
 import com.example.praiveitcontacts.Models.Contactos;
+import com.example.praiveitcontacts.Models.Login;
+import com.example.praiveitcontacts.Models.Usuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,6 +95,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public Usuario Login(Login login){
+        Usuario usuario = new Usuario();
+
+        String queryString = "SELECT * FROM Usuarios WHERE Usuario = "+login.getUsuario();
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                usuario.setId(cursor.getInt(0));
+                usuario.setContrasena(cursor.getString(6));
+            }while (cursor.moveToNext());
+        }
+        cursor.close();
+        db.close();
+        if(usuario.getContrasena().equals(login.getContrasena()))
+        {
+            return usuario;
+        }else{
+            return null;
+        }
+
+
+    }
 
 
 
