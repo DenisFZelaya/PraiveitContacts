@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/logo">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:animateLayoutChanges="false"
+                    app:cardCornerRadius="20dp"
+                    app:cardUseCompatPadding="false">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:accessibilityLiveRegion="polite"
+                            android:hint="Login"
+                            app:endIconMode="clear_text"
+                            app:startIconDrawable="?android:attr/fingerprintAuthDrawable">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tiusuario_login"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxLength="10" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="Contrasena"
+                            app:endIconMode="clear_text"
+                            app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tipass_login"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+
+                                android:inputType="textPassword"
+                                android:maxLength="100" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Button
+                            android:id="@+id/btn_inicio_login"
+                            style="@android:style/Widget.Material.Light.Button"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="#952323"
+                            android:backgroundTint="#000000"
+                            android:shadowColor="#009688"
+                            android:text="Inicar sesion"
+                            app:icon="@android:drawable/ic_menu_send"
+                            app:rippleColor="#8BC34A" />
+
+                        <Button
+                            android:id="@+id/btnRegistro"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:onClick="Registro"
+                            android:text="No tienes cuenta? registrate" />
+                    </LinearLayout>
+
+
+                </com.google.android.material.card.MaterialCardView>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
