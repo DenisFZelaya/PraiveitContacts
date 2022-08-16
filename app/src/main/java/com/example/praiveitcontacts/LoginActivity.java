@@ -9,6 +9,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.example.praiveitcontacts.Models.Login;
+import com.example.praiveitcontacts.Models.Usuario;
+
 public class LoginActivity extends AppCompatActivity {
 
     protected EditText etUsu, etContrasena;
@@ -26,8 +29,7 @@ public class LoginActivity extends AppCompatActivity {
         buttonLoguin.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 try {
-                    Intent MainPage = new Intent (LoginActivity.this, MainActivity.class);
-                    startActivity(MainPage);
+
 
                     if(etUsu.getText().length() < 1){
                         etUsu.setBackgroundColor(Color.parseColor("#ffb6c1"));
@@ -36,6 +38,24 @@ public class LoginActivity extends AppCompatActivity {
                         etContrasena.setBackgroundColor(Color.parseColor("#ffb6c1"));
                     }
                     System.out.println("Message: Boton presionado Usu: " + etUsu.getText() + ". Pass: " + etContrasena.getText());
+
+                    DatabaseHelper db = new DatabaseHelper(LoginActivity.this);
+
+                    Login loginRequest = new Login();
+                    loginRequest.setUsuario(etUsu.getText().toString());
+                    loginRequest.setContrasena(etContrasena.getText().toString());
+                    Usuario usuarioResponse = db.Login(loginRequest);
+
+                    if(usuarioResponse == null){
+                        // Mostrar notificacion de datos incorrectos
+                        System.out.println("incorrectos");
+
+                    }else {
+                        System.out.println(usuarioResponse.getId());
+
+                        Intent MainPage = new Intent (LoginActivity.this, MainActivity.class);
+                        startActivity(MainPage);
+                    }
 
                 }catch (Exception ex){
                     System.out.println(ex.getMessage());
