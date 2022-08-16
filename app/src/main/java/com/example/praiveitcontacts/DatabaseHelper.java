@@ -18,7 +18,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //1.1 - Contructor
     public DatabaseHelper(@Nullable Context context) {
-        super(context, "PraivateContactsDB", null, 1);
+        super(context, "PraivateContactsDB_DEV", null, 1);
     }
 
     //1.2 - Crear tablas en db
@@ -26,7 +26,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String createTableUsuarios = "" +
                 "                  CREATE TABLE Usuarios ( " +
-                "                ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "                ID INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "                Nombre TEXT NOT NULL," +
                 "                Apellido TEXT NOT NULL," +
                 "                Genero TEXT NOT NULL, " +
@@ -81,8 +81,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 returnList.add(ContactosModel);
             }while (cursor.moveToNext());
         }
-        cursor.close();
-        db.close();
+        // cursor.close();
+        // db.close();
         return returnList;
     }
 
@@ -91,16 +91,17 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String queryString = "SELECT * FROM Contactos";
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.close();
-
+        // db.close();
     }
 
     public Usuario Login(Login login){
         Usuario usuario = new Usuario();
 
-        String queryString = "SELECT * FROM Usuarios WHERE Usuario = "+login.getUsuario();
+        String queryString = "SELECT * FROM Usuarios WHERE Usuario = " + "'" + login.getUsuario()+ "'";
+        System.out.println(queryString);
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(queryString, null);
+        System.out.println(cursor.toString());
 
         if(cursor.moveToFirst()){
             do {
@@ -108,8 +109,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 usuario.setContrasena(cursor.getString(6));
             }while (cursor.moveToNext());
         }
-        cursor.close();
-        db.close();
+        // cursor.close();
+        // db.close();
         if(usuario.getContrasena().equals(login.getContrasena()))
         {
             return usuario;
