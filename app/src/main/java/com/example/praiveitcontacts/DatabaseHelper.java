@@ -115,10 +115,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         {
             return usuario;
         }else{
-            return null;
+            return new Usuario();
         }
     }
 
+    //Insertar Usuario
     public boolean InsertarUsuario(Usuario usuariosModel){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
