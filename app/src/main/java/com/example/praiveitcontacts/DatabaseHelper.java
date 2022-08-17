@@ -1,5 +1,6 @@
 package com.example.praiveitcontacts;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -96,12 +97,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Usuario Login(Login login){
         Usuario usuario = new Usuario();
-
-        String queryString = "SELECT * FROM Usuarios WHERE Usuario = " + "'" + login.getUsuario()+ "'";
-        System.out.println(queryString);
+        String queryString = "SELECT * FROM Usuarios WHERE Usuario = "+login.getUsuario();
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(queryString, null);
-        System.out.println(cursor.toString());
 
         if(cursor.moveToFirst()){
             do {
@@ -109,18 +107,154 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 usuario.setContrasena(cursor.getString(6));
             }while (cursor.moveToNext());
         }
-        // cursor.close();
-        // db.close();
+        cursor.close();
+        db.close();
         if(usuario.getContrasena().equals(login.getContrasena()))
         {
             return usuario;
         }else{
-            return null;
+            return new Usuario();
         }
-
-
     }
 
+    //Insertar Usuario
+    public boolean InsertarUsuario(Usuario usuariosModel){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("IdUsuario", (Integer) null);
+        cv.put("Nombre", usuariosModel.getNombre());
+        cv.put("Apellido", usuariosModel.getApellido());
+        cv.put("Genero", usuariosModel.getGenero());
+        cv.put("Usuario", usuariosModel.getUsuario());
+        cv.put("Correo", usuariosModel.getCorreo());
+        cv.put("Password", usuariosModel.getContrasena());
+
+
+        long insert = db.insert("Usuarios", null, cv);
+        if(insert == -1){
+            return  false;
+        }else{
+            return  true;
+        }
+    }
+
+    //Crear Contactos
+    public boolean InsertarContacto(Contactos contactosModel){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put("Id", (Integer) null);
+        cv.put("Nombre", contactosModel.getNombre());
+        cv.put("Apellido", contactosModel.getApellido());
+        cv.put("Genero", contactosModel.getGenero());
+        cv.put("Correo", contactosModel.getCorreo());
+        cv.put("Telefono", contactosModel.getTelefono());
+        cv.put("TelefonoFijo", contactosModel.getTelefonoFijo());
+        cv.put("Direccion", contactosModel.getDireccion());
+        cv.put("IdUserMaster", (Integer) null);
+
+        long insert = db.insert("Contactos", null, cv);
+        if(insert == -1){
+            return  false;
+        }else{
+            return  true;
+        }
+    }
+
+    //Editar Contactos
+    public boolean EditarContacto(Contactos EditarContacto){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String queryString = "UPDATE Contactos " +
+                "SET Nombre = '" + EditarContacto.getNombre() + "', "+
+                " Apellido = '" + EditarContacto.getApellido() + "', "+
+                " Genero = '" + EditarContacto.getGenero() + "', "+
+                " Correo = '" + EditarContacto.getCorreo() + "', "+
+                " Telefono = '" + EditarContacto.getTelefono() + "' "+
+                " TelefonoFijo = '" + EditarContacto.getTelefonoFijo() + "' "+
+                " Direccion = '" + EditarContacto.getDireccion() + "' "+
+                " IdUserMaster = '" + EditarContacto.getIdUsuarioMaster() + "' "+
+                " WHERE Id = " + EditarContacto.getId() + ";";
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            return  false;
+        }else  {
+            return  true;
+        }
+    }
+
+    //Eliminar Contactos
+    public boolean deleteContactoById(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        String queryString = "DELETE FROM Contactos WHERE Id = " + id;
+
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            return  false;
+        }else  {
+            return  true;
+        }
+    }
+
+    //Obtener Listado de Contactos
+    public List<Contactos> getAllContactos(int id){
+        List<Contactos> returnList = new ArrayList<>();
+        String queryString = "SELECT * FROM Contactos WHERE idUserMaster =" + id;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                Contactos ContactosModel = new Contactos();
+                ContactosModel.setId(cursor.getInt(0));
+                ContactosModel.setNombre(cursor.getString(1));
+                ContactosModel.setApellido(cursor.getString(2));
+                ContactosModel.setGenero(cursor.getString(3));
+                ContactosModel.setCorreo(cursor.getString(4));
+                ContactosModel.setTelefono(cursor.getString(5));
+                ContactosModel.setTelefonoFijo(cursor.getString(6));
+                ContactosModel.setDireccion(cursor.getString(7));
+                ContactosModel.setIdUsuarioMaster(cursor.getInt(8));
+
+            }while (cursor.moveToNext());
+        } else {
+
+        }
+        //cursor.close();
+        //db.close();
+        return returnList;
+    };
+
+    //Traer contacto por ID
+    public Contactos getContactoModelById(int id){
+        Contactos contactoSelected = new Contactos();
+
+        String queryString = "SELECT * FROM Contactos WHERE Id = " + id + ";";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                contactoSelected.setId(cursor.getInt(0));
+                contactoSelected.setNombre(cursor.getString(1));
+                contactoSelected.setApellido(cursor.getString(2));
+                contactoSelected.setGenero(cursor.getString(3));
+                contactoSelected.setCorreo(cursor.getString(4));
+                contactoSelected.setTelefono(cursor.getString(5));
+                contactoSelected.setTelefonoFijo(cursor.getString(6));
+                contactoSelected.setDireccion(cursor.getString(7));
+                contactoSelected.setIdUsuarioMaster(cursor.getInt(8));
+            }while (cursor.moveToNext());
+        } else {
+            contactoSelected.setNombre("null");
+        }
+        cursor.close();
+        db.close();
+        return contactoSelected;
+    };
 
 
 }
