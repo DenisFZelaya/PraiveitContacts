@@ -10,9 +10,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PraiveitContacts">
         <activity
-            android:name=".CreditosActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegistroActivity"
             android:exported="false" />
         <activity
@@ -27,6 +24,9 @@
         <activity
             android:name=".MainActivity"
             android:exported="false" />
+
+        <activity android:name="Credits"/>
+
     </application>
 
 </manifest>
