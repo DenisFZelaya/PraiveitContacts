@@ -97,24 +97,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public Usuario Login(Login login){
         Usuario usuario = new Usuario();
-        String queryString = "SELECT * FROM Usuarios WHERE Usuario = "+login.getUsuario();
+        String queryString = "SELECT * FROM Usuarios WHERE Usuario = '" + login.getUsuario() + "' AND Password = '" + login.getContrasena() + "';";
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(queryString, null);
 
         if(cursor.moveToFirst()){
             do {
                 usuario.setId(cursor.getInt(0));
-                usuario.setContrasena(cursor.getString(6));
+
             }while (cursor.moveToNext());
+        } else {
+            usuario.setId(0);
         }
-        cursor.close();
-        db.close();
-        if(usuario.getContrasena().equals(login.getContrasena()))
-        {
-            return usuario;
-        }else{
-            return new Usuario();
-        }
+        // cursor.close();
+        // db.close();
+
+        return usuario;
+
     }
 
     //Insertar Usuario
@@ -122,14 +121,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put("IdUsuario", (Integer) null);
+        cv.put("ID", (Integer) null);
         cv.put("Nombre", usuariosModel.getNombre());
         cv.put("Apellido", usuariosModel.getApellido());
         cv.put("Genero", usuariosModel.getGenero());
         cv.put("Usuario", usuariosModel.getUsuario());
         cv.put("Correo", usuariosModel.getCorreo());
         cv.put("Password", usuariosModel.getContrasena());
-
 
         long insert = db.insert("Usuarios", null, cv);
         if(insert == -1){
@@ -256,5 +254,30 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return contactoSelected;
     };
 
+    //Traer contacto por ID
+    public Usuario getUsuarioById(int id){
+        Usuario usuarioSeleccionado = new Usuario();
+
+        String queryString = "SELECT * FROM Usuarios WHERE ID = " + id + ";";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                usuarioSeleccionado.setId(cursor.getInt(0));
+                usuarioSeleccionado.setNombre(cursor.getString(1));
+                usuarioSeleccionado.setApellido(cursor.getString(2));
+                usuarioSeleccionado.setGenero(cursor.getString(3));
+                usuarioSeleccionado.setUsuario(cursor.getString(4));
+                usuarioSeleccionado.setCorreo(cursor.getString(5));
+                usuarioSeleccionado.setContrasena(cursor.getString(6));
+            }while (cursor.moveToNext());
+        } else {
+            usuarioSeleccionado.setNombre("null");
+        }
+        cursor.close();
+        db.close();
+        return usuarioSeleccionado;
+    };
 
 }
