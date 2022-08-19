@@ -2,12 +2,16 @@ package com.example.praiveitcontacts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.sqlite.SQLiteDatabase;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.praiveitcontacts.Models.Contactos;
 import com.example.praiveitcontacts.Models.Usuario;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
     public void onClickDb(View view) {
         super.onResume();
         System.out.println("Presionando boton");
@@ -44,4 +49,28 @@ public class MainActivity extends AppCompatActivity {
         db.getAllContactos();
         db.OpenDB();
     }
+
+    @Override
+    protected void onStart(){
+        super.onStart();
+        System.out.println("Ejecutando onStart");
+        listContactos();
+    }
+
+    public void listContactos(){
+        ListView lv_contactos = findViewById(R.id.lv_contactos_list);
+        DatabaseHelper db = new DatabaseHelper(this);
+        ArrayList<Contactos> arrayContactos = (ArrayList<Contactos>) db.getAllContactos(idUsuario);
+        ListViewAdapter adapter = new ListViewAdapter(this, arrayContactos);
+        lv_contactos.setAdapter(adapter);
+    }
+
+    public  void irCrearContactos(View v){
+        Bundle datoenvia = new Bundle();
+        datoenvia.putInt("Id", idUsuario);
+        Intent intentCrear = new Intent (MainActivity.this, activity_crear_contacto.class);
+        intentCrear.putExtras(datoenvia);
+        startActivity(intentCrear);
+    }
+
 }
