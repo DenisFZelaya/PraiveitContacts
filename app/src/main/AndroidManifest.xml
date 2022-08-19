@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PraiveitContacts">
         <activity
+            android:name=".layout_Lista"
+            android:exported="false" />
+        <activity
+            android:name=".activity_modificar_contactos"
+            android:exported="false" />
+        <activity
+            android:name=".activity_crear_contacto"
+            android:exported="false" />
+        <activity
             android:name=".CreditosActivity"
             android:exported="false" />
         <activity

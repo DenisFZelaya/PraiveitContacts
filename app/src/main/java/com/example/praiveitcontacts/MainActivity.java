@@ -12,7 +12,8 @@ import com.example.praiveitcontacts.Models.Usuario;
 public class MainActivity extends AppCompatActivity {
 
     private  int idUsuario;
-    private TextView idTextoEntrada;
+    private TextView txTitulo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +33,9 @@ public class MainActivity extends AppCompatActivity {
         Usuario usuarioLogueado = db.getUsuarioById(idUsuario);
 
         System.out.println("Usuario logueado : " + idUsuario);
-        idTextoEntrada = findViewById(R.id.idTextoEntrada);
-        idTextoEntrada.setText("Id usuario logueado " + usuarioLogueado.getNombre());
+        txTitulo = findViewById(R.id.txTitulo);
+        txTitulo.setText("Contactos de " + usuarioLogueado.getNombre());
+
     }
 
     public void onClickDb(View view) {
