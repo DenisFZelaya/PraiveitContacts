@@ -33,12 +33,12 @@ public class RegistroActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registro);
         getSupportActionBar().hide();
 
-        Nombre = findViewById(R.id.inputNombreRegistro);
-        Apellido = findViewById(R.id.inputApellidoRegistro);
+        Nombre = findViewById(R.id.inputNombreContacto);
+        Apellido = findViewById(R.id.inputApellidoContacto);
         User = findViewById(R.id.inputUsuarioRegistro);
-        Email = findViewById(R.id.inputEmailRegistro);
-        Hombre = findViewById(R.id.radio_button_HombreRegistro);
-        Mujer = findViewById(R.id.radio_button_MujerRegistro);
+        Email = findViewById(R.id.inputEmailContacto);
+        Hombre = findViewById(R.id.radio_button_HombreContacto);
+        Mujer = findViewById(R.id.radio_button_MujerContacto);
         Contrasena = findViewById(R.id.inputContrasenaRegistro);
         RepeatContrasena = findViewById(R.id.inputRepeatContraRegistro);
         radioGroup = findViewById(R.id.radioGroupGeneroRegistro);
