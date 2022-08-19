@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
             idUsuario = recibirIdUsuario.getInt("idUsuario");
         }
 
-
         Usuario usuarioLogueado = db.getUsuarioById(idUsuario);
 
         System.out.println("Usuario logueado : " + idUsuario);
