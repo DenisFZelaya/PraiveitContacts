@@ -14,7 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                     android:id="@+id/textView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Registrarse"
+                    android:text="Nuevo Contacto"
                     android:textAlignment="viewStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textSize="30sp"
@@ -71,22 +71,6 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textFieldAUsuarioRegistro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputUsuarioRegistro"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="#fff"
-                        android:enabled="false"
-                        android:hint="Usuario" />
-
-                </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/textEmailRegistro"
@@ -133,9 +117,9 @@
 
                             <RadioButton
                                 android:id="@+id/radio_button_HombreContacto"
+                                android:checked="false"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
-                                android:checked="false"
                                 android:text="Hombre" />
 
                             <RadioButton
@@ -151,32 +135,47 @@
                 </FrameLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textContrasenaRegistro"
+                    android:id="@+id/textTelefoCelular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:startIconDrawable="@android:drawable/ic_lock_lock">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputContrasenaRegistro"
+                        android:id="@+id/inputTelefonoContacto"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#fff"
-                        android:hint="Contrasena" />
+                        android:hint="Número Celular" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textRepetirContrasenaRegistro"
+                    android:id="@+id/textTelefonoFijo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:startIconDrawable="@android:drawable/ic_lock_lock">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputRepeatContraRegistro"
+                        android:id="@+id/inputTelefonoFijo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#fff"
-                        android:hint="Repetir  contraseña" />
+                        android:hint="Telefono Fijo" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/textDireccion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:startIconDrawable="@android:drawable/ic_lock_lock">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputDireccion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#fff"
+                        android:hint="Direccion" />
 
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -186,7 +185,8 @@
                     android:layout_height="wrap_content"
                     android:onClick="crearUsuarioRegistro"
                     android:padding="10dp"
-                    android:text="Crear cuenta"
+                    android:text="Crear Contacto"
+                    android:textColor="@color/primaryText"
                     app:icon="@android:drawable/ic_input_add" />
 
             </LinearLayout>
