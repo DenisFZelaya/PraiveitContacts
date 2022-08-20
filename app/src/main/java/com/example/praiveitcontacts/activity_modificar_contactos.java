@@ -36,15 +36,15 @@ public class activity_modificar_contactos extends AppCompatActivity {
 
         Bundle recibirIdUsuario= this.getIntent().getExtras();
         if (recibirIdUsuario != null) {
-            idContacto = recibirIdUsuario.getInt("idCharla");
+            idContacto = recibirIdUsuario.getInt("idContacto");
         }
 
-        System.out.println("idCharla editar: " + idContacto);
+        System.out.println("idContacto editar: " + idContacto);
 
         DatabaseHelper db = new DatabaseHelper(activity_modificar_contactos.this);
         contacto = db.getContactoModelById(idContacto);
 
-        Log.i("Modificar una charla", contacto.getNombre());
+        Log.i("Modificar una contacto", contacto.getNombre());
 
         Nombre = findViewById(R.id.inputNombreContactoEditar);
         Apellido = findViewById(R.id.inputApellidoContactoEditar);

@@ -49,6 +49,14 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
         textViewNumeroContacto.setText(contactos.getTelefono());
 
         // Return the completed view to render on screen
+        textViewNombreContacto.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                System.out.println("Click en el texto para mostrar los detalles");
+                cargarDetallesContacto(contactos.getId());
+            }
+        });
 
         // Asignar evento a boton
         btnItem.setOnClickListener(new View.OnClickListener() {
@@ -63,11 +71,11 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
     }
 
     //1.3 Método para cargar una nueva actividad editar
-    protected void cargarPageEditar(int idCharla) {
+    protected void cargarPageEditar(int idContacto) {
         try {
-            System.out.println("Funcion editar charla: " + idCharla);
+            System.out.println("Funcion editar charla: " + idContacto);
             Bundle datoenvia = new Bundle();
-            datoenvia.putInt("idCharla", idCharla);
+            datoenvia.putInt("idContacto", idContacto);
 
             Intent intentEditarCharla = new Intent(getContext(), activity_modificar_contactos.class);
             intentEditarCharla.putExtras(datoenvia);
@@ -75,7 +83,20 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
         } catch (Exception ex) {
             System.out.println("Error cargando EditarCharla: " + ex.getMessage());
         }
+    }
 
+    protected void cargarDetallesContacto(int idContacto) {
+        try {
+            System.out.println("Funcion editar contacto: " + idContacto);
+            Bundle datoenvia = new Bundle();
+            datoenvia.putInt("idContacto", idContacto);
+
+            Intent intent = new Intent(getContext(), DetallesContactoActivity.class);
+            intent.putExtras(datoenvia);
+            getContext().startActivity(intent);
+        } catch (Exception ex) {
+            System.out.println("Error cargando detalles Contacto: " + ex.getMessage());
+        }
     }
 
 }

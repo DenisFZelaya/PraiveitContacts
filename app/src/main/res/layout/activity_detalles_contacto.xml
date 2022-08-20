@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wall"
+    android:orientation="vertical"
+    tools:context=".DetallesContactoActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/donatello" />
+
+    <TextView
+        android:id="@+id/tv_nombre_detalles_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textSize="24sp" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:background="@android:color/transparent"
+        android:checkable="false"
+        app:cardCornerRadius="25dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        app:contentPadding="10dp">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checkable="false"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="3dp"
+                            app:cardPreventCornerOverlap="false"
+                            app:cardUseCompatPadding="true"
+                            app:contentPadding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:minHeight="50dp">
+
+                                    <ImageView
+
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/maps"
+                                        android:foregroundGravity="center"
+                                        android:padding="20dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="60dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginLeft="15dp"
+
+                                            android:maxLines="2"
+                                            android:paddingEnd="16dp"
+                                            android:text="Buscar en google maps"
+                                            android:textAppearance="?attr/textAppearanceBody2" />
+
+                                        <TextView
+
+                                            android:id="@+id/tv_direccion_detalles"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignWithParentIfMissing="false"
+
+                                            android:layout_marginLeft="15dp"
+                                            android:maxLines="1"
+                                            android:paddingEnd="16dp"
+                                            android:text="Reitoca francisco morazan"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                            android:textColor="@color/primaryLigth" />
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checkable="false"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="3dp"
+                            app:cardPreventCornerOverlap="false"
+                            app:cardUseCompatPadding="true"
+                            app:contentPadding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:minHeight="50dp">
+
+                                    <ImageView
+
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@drawable/whatsapp"
+                                        android:foregroundGravity="center"
+                                        android:padding="20dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="60dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginLeft="15dp"
+
+                                            android:maxLines="2"
+                                            android:paddingEnd="16dp"
+                                            android:text="Enviar un mensaje"
+                                            android:textAppearance="?attr/textAppearanceBody2" />
+
+                                        <TextView
+
+                                            android:id="@+id/tv_whatsapp_detalles"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignWithParentIfMissing="false"
+
+                                            android:layout_marginLeft="15dp"
+                                            android:maxLines="1"
+                                            android:paddingEnd="16dp"
+                                            android:text="31857714"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                            android:textColor="@color/primaryLigth" />
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checkable="false"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="3dp"
+                            app:cardPreventCornerOverlap="false"
+                            app:cardUseCompatPadding="true"
+                            app:contentPadding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:minHeight="50dp">
+
+                                    <ImageView
+
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@android:drawable/ic_dialog_email"
+                                        android:foregroundGravity="center"
+                                        android:padding="20dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="60dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginLeft="15dp"
+
+                                            android:maxLines="2"
+                                            android:paddingEnd="16dp"
+                                            android:text="Enviar correo electrónico"
+                                            android:textAppearance="?attr/textAppearanceBody2" />
+
+                                        <TextView
+
+                                            android:id="@+id/tv_enviar_correo_detalles"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignWithParentIfMissing="false"
+
+                                            android:layout_marginLeft="15dp"
+                                            android:maxLines="1"
+                                            android:paddingEnd="16dp"
+                                            android:text="Denisfzelaya@gmail.com"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                            android:textColor="@color/primaryLigth" />
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checkable="false"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="3dp"
+                            app:cardPreventCornerOverlap="false"
+                            app:cardUseCompatPadding="true"
+                            app:contentPadding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:minHeight="50dp">
+
+                                    <ImageView
+
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@android:drawable/sym_action_call"
+                                        android:foregroundGravity="center"
+                                        android:padding="20dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="60dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginLeft="15dp"
+
+                                            android:maxLines="2"
+                                            android:paddingEnd="16dp"
+                                            android:text="Llamar a télefono"
+                                            android:textAppearance="?attr/textAppearanceBody2" />
+
+                                        <TextView
+
+                                            android:id="@+id/tv_llamar_detalles"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignWithParentIfMissing="false"
+
+                                            android:layout_marginLeft="15dp"
+                                            android:maxLines="1"
+                                            android:paddingEnd="16dp"
+                                            android:text="31857714"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                            android:textColor="@color/primaryLigth" />
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingVertical="3dp">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:checkable="false"
+                            app:cardCornerRadius="10dp"
+                            app:cardElevation="3dp"
+                            app:cardPreventCornerOverlap="false"
+                            app:cardUseCompatPadding="true"
+                            app:contentPadding="10dp">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:minHeight="50dp">
+
+                                    <ImageView
+
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_marginEnd="10dp"
+                                        android:background="@android:drawable/sym_action_call"
+                                        android:foregroundGravity="center"
+                                        android:padding="20dp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="60dp"
+                                        android:orientation="vertical">
+
+                                        <TextView
+
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            android:layout_gravity="center_vertical"
+                                            android:layout_marginLeft="15dp"
+
+                                            android:maxLines="2"
+                                            android:paddingEnd="16dp"
+                                            android:text="Llamar a télefono fijo"
+                                            android:textAppearance="?attr/textAppearanceBody2" />
+
+                                        <TextView
+
+                                            android:id="@+id/tv_llamar_fijo_detalles"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_alignWithParentIfMissing="false"
+
+                                            android:layout_marginLeft="15dp"
+                                            android:maxLines="1"
+                                            android:paddingEnd="16dp"
+                                            android:text="22011862"
+                                            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                                            android:textColor="@color/primaryLigth" />
+                                    </LinearLayout>
+
+
+                                </RelativeLayout>
+                            </LinearLayout>
+
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+    </LinearLayout>
+</LinearLayout>

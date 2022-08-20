@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PraiveitContacts">
         <activity
+            android:name=".DetallesContactoActivity"
+            android:exported="false" />
+        <activity
             android:name=".layout_Lista"
             android:exported="false" />
         <activity
@@ -20,9 +23,7 @@
             android:exported="false" />
         <activity
             android:name=".CreditosActivity"
-            android:exported="true"
-            >
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".RegistroActivity"
             android:exported="false" />
