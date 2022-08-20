@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0px"
+    android:orientation="vertical">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:checkable="false"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="1dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="false"
+        app:contentPadding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="?attr/selectableItemBackground"
+                android:minHeight="50dp">
+
+                <ImageView
+                    android:id="@+id/mtrl_list_item_icon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="@drawable/man"
+                    android:foregroundGravity="center"
+                    android:padding="20dp" />
+
+                <TextView
+                    android:id="@+id/tvNombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignWithParentIfMissing="false"
+                    android:layout_alignParentStart="false"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="false"
+                    android:layout_alignParentEnd="false"
+                    android:layout_alignParentRight="false"
+                    android:layout_alignParentBottom="false"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toEndOf="@id/mtrl_list_item_icon"
+                    android:maxLines="1"
+                    android:paddingEnd="16dp"
+                    android:text="Nombre Contacto"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/primaryLigth" />
+
+                <TextView
+                    android:id="@+id/tvNumero"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvNombre"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="15dp"
+                    android:layout_toEndOf="@id/mtrl_list_item_icon"
+                    android:maxLines="2"
+                    android:paddingEnd="16dp"
+                    android:text="Numero Contacto"
+                    android:textAppearance="?attr/textAppearanceBody2" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnList"
+            style="@android:style/Widget.Material.Light.Button.Borderless"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="right|center_horizontal"
+            android:elevation="5dp"
+            android:foreground="@drawable/update"
+            android:foregroundGravity="center"
+            android:foregroundTint="@color/elementosDiseno"
+            android:foregroundTintMode="@color/elementosDiseno"
+            android:hapticFeedbackEnabled="true"
+            android:includeFontPadding="false" />
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>
