@@ -2,10 +2,15 @@ package com.example.praiveitcontacts;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ClipData;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -27,7 +32,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
 
         DatabaseHelper db = new DatabaseHelper(MainActivity.this);
 
@@ -72,7 +76,27 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.item_menu_creditos:
+                System.out.println("Item menu creditos");
+                Intent intentCreditos = new Intent (MainActivity.this, CreditosActivity.class);
+                startActivity(intentCreditos);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_options, menu);
+        return true;
+
+    }
 
     @Override
     protected void onStart(){
@@ -80,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
         System.out.println("Ejecutando onStart");
         listContactos();
     }
+
 
     public void listContactos(){
         ListView lv_contactos = (ListView)findViewById(R.id.lv_contactos_list);
