@@ -11,117 +11,135 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="20dp">
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="287dp"
-                    app:srcCompat="@drawable/icon_main">
-
-                </ImageView>
-
-            </LinearLayout>
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="bottom"
-                android:gravity="bottom"
-                android:orientation="vertical">
+                android:orientation="horizontal">
 
-                <com.google.android.material.switchmaterial.SwitchMaterial
-                    android:id="@+id/switch_sesion_iniciada"
+                <LinearLayout
+                    android:id="@+id/linerLayoutLogin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:checked="false"
-                    android:text="Mantener sesión iniciada" />
-
-                <com.google.android.material.card.MaterialCardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:animateLayoutChanges="false"
-                    app:cardCornerRadius="20dp"
-                    app:cardUseCompatPadding="false">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="20dp">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="bottom"
                         android:orientation="vertical">
 
-                        <com.google.android.material.textfield.TextInputLayout
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="287dp"
+                                app:srcCompat="@drawable/icon_main">
+
+                            </ImageView>
+
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:accessibilityLiveRegion="polite"
-                            android:hint="Usuario"
-                            app:endIconMode="clear_text"
-                            app:startIconDrawable="?android:attr/fingerprintAuthDrawable">
+                            android:layout_gravity="bottom"
+                            android:gravity="bottom"
+                            android:orientation="vertical">
 
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/tiusuario_login"
+                            <com.google.android.material.switchmaterial.SwitchMaterial
+                                android:id="@+id/switch_sesion_iniciada"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:maxLength="10" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                                android:checked="false"
+                                android:text="Mantener sesión iniciada" />
 
-                        <com.google.android.material.textfield.TextInputLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:hint="Contrasena"
-                            app:endIconMode="clear_text"
-                            app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
-
-                            <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/tipass_login"
+                            <com.google.android.material.card.MaterialCardView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:animateLayoutChanges="false"
+                                app:cardCornerRadius="20dp"
+                                app:cardUseCompatPadding="false">
 
-                                android:inputType="textPassword"
-                                android:maxLength="100" />
-                        </com.google.android.material.textfield.TextInputLayout>
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="bottom"
+                                    android:orientation="vertical">
 
-                        <Button
-                            android:id="@+id/btn_inicio_login"
-                            style="@android:style/Widget.Material.Light.Button"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:background="@color/primary"
-                            android:text="Inicar sesion"
-                            android:textColor="@color/primaryText"
-                            app:cornerRadius="25dp"
-                            app:icon="@android:drawable/ic_menu_send"
-                            app:iconTint="#F6F6F6" />
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:accessibilityLiveRegion="polite"
+                                        android:hint="Usuario"
+                                        app:endIconMode="clear_text"
+                                        app:startIconDrawable="?android:attr/fingerprintAuthDrawable">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tiusuario_login"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:maxLength="10" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <com.google.android.material.textfield.TextInputLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:hint="Contrasena"
+                                        app:endIconMode="clear_text"
+                                        app:startIconDrawable="@android:drawable/ic_lock_idle_lock">
+
+                                        <com.google.android.material.textfield.TextInputEditText
+                                            android:id="@+id/tipass_login"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+
+                                            android:inputType="textPassword"
+                                            android:maxLength="100" />
+                                    </com.google.android.material.textfield.TextInputLayout>
+
+                                    <Button
+                                        android:id="@+id/btn_inicio_login"
+                                        style="@android:style/Widget.Material.Light.Button"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@color/primary"
+                                        android:text="Inicar sesion"
+                                        android:textColor="@color/primaryText"
+                                        app:cornerRadius="25dp"
+                                        app:icon="@android:drawable/ic_menu_send"
+                                        app:iconTint="#F6F6F6" />
+
+                                </LinearLayout>
+
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <Button
+                                android:id="@+id/btnRegistro"
+                                style="@style/Widget.MaterialComponents.Button.TextButton"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="10dp"
+                                android:onClick="Registro"
+                                android:text="No tienes cuenta? registrate" />
+
+
+                        </LinearLayout>
+
 
                     </LinearLayout>
-
-
-                </com.google.android.material.card.MaterialCardView>
-
-                <Button
-                    android:id="@+id/btnRegistro"
-                    style="@style/Widget.MaterialComponents.Button.TextButton"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:onClick="Registro"
-                    android:text="No tienes cuenta? registrate" />
-
-
+                </LinearLayout>
             </LinearLayout>
-
-
-        </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
 </LinearLayout>
