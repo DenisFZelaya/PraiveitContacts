@@ -205,6 +205,40 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return returnList;
     };
 
+    //Obtener Listado de Contactos
+    public List<Contactos> getBuscarContactos(int id, String nombreBusqueda){
+        List<Contactos> returnList = new ArrayList<>();
+        String queryString = "SELECT * FROM Contactos WHERE idUserMaster = " + id + " AND Nombre LIKE '%" + nombreBusqueda + "%' OR Apellido LIKE '%" + nombreBusqueda + "%' OR Telefono LIKE '%" + nombreBusqueda + "%' OR CORREO LIKE '%" + nombreBusqueda + "%'";
+        System.out.println(queryString);
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+
+        if(cursor.moveToFirst()){
+            do {
+                Contactos ContactosModel = new Contactos();
+                ContactosModel.setId(cursor.getInt(0));
+                ContactosModel.setNombre(cursor.getString(1));
+                ContactosModel.setApellido(cursor.getString(2));
+                ContactosModel.setGenero(cursor.getString(3));
+                ContactosModel.setCorreo(cursor.getString(4));
+                ContactosModel.setTelefono(cursor.getString(5));
+                ContactosModel.setTelefonoFijo(cursor.getString(6));
+                ContactosModel.setDireccion(cursor.getString(7));
+                System.out.println(ContactosModel.getNombre());
+                ContactosModel.setIdUsuarioMaster(cursor.getInt(8));
+
+
+                System.out.println("MisUsuarios: " + ContactosModel.getNombre());
+                returnList.add(ContactosModel);
+            }while (cursor.moveToNext());
+        } else {
+
+        }
+        //cursor.close();
+        //db.close();
+        return returnList;
+    };
+
     //Traer contacto por ID
     public Contactos getContactoModelById(int id){
         Contactos contactoSelected = new Contactos();
