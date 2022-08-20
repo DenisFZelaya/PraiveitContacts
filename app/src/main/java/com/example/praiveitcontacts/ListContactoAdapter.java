@@ -2,6 +2,7 @@ package com.example.praiveitcontacts;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,20 +15,26 @@ import com.example.praiveitcontacts.Models.Contactos;
 
 import java.util.ArrayList;
 
-public class ListViewAdapter extends ArrayAdapter<Contactos> {
+public class ListContactoAdapter extends ArrayAdapter<Contactos> {
     //1.1 Constructor
-    public ListViewAdapter(Context context, ArrayList<Contactos> contactos) {
+    public ListContactoAdapter(Context context, ArrayList<Contactos> contactos) {
         super(context, 0, contactos);
+        System.out.println("ctor  adapter");
     }
 
     //1.2 Metodo para obtener el layout de la lista
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
+        System.out.println("getView adapter");
+
         // Obtener xml de la vista
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.layout_list, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+            System.out.println("convertViewId " + convertView.getId());
         }
+        System.out.println("convertView " + convertView.toString());
+
 
         // Get the data item for this position
         Contactos contactos = getItem(position);
@@ -60,7 +67,7 @@ public class ListViewAdapter extends ArrayAdapter<Contactos> {
         try {
             System.out.println("Funcion editar charla: " + idCharla);
             Bundle datoenvia = new Bundle();
-            datoenvia.putInt("Id", idCharla);
+            datoenvia.putInt("idCharla", idCharla);
 
             Intent intentEditarCharla = new Intent(getContext(), activity_modificar_contactos.class);
             intentEditarCharla.putExtras(datoenvia);

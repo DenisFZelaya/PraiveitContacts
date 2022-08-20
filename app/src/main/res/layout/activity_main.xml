@@ -14,6 +14,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/primaryLigth"
         android:clickable="false"
         android:orientation="vertical">
 
@@ -25,10 +26,29 @@
             <ImageView
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="10dp"
                 app:srcCompat="@drawable/phone" />
+
+            <TextView
+                android:id="@+id/txTitulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contactos de"
+                android:textAlignment="center"
+                android:textColor="@color/primaryText"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,7 +65,7 @@
                     android:layout_marginTop="1dp"
                     android:layout_marginEnd="1dp"
                     android:layout_marginBottom="1dp"
-                    app:cardCornerRadius="15dp"
+                    app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:cardMaxElevation="@dimen/cardview_default_elevation"
                     app:cardPreventCornerOverlap="true">
@@ -61,28 +81,12 @@
                         android:hint="Buscar"
                         android:inputType="textPersonName"
                         android:textColorHighlight="@color/primaryText"
+                        android:textColorHint="@color/elementosDiseno"
                         android:textColorLink="@color/primaryText"
-                        android:textSize="24sp" />
+                        android:textSize="20sp" />
 
                 </com.google.android.material.card.MaterialCardView>
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="15dp"
-                android:layout_marginEnd="15dp"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/txTitulo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contactos de"
-                    android:textColor="@color/cardview_dark_background"
-                    android:textSize="26sp"
-                    android:textStyle="bold" />
             </LinearLayout>
 
         </LinearLayout>
@@ -101,8 +105,8 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginBottom="10dp"
-                app:cardCornerRadius="30dp"
-                app:cardElevation="6dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="1dp"
                 app:cardMaxElevation="@dimen/cardview_default_elevation"
                 app:cardPreventCornerOverlap="true">
 
@@ -113,8 +117,7 @@
                     android:layout_marginStart="10dp"
                     android:layout_marginTop="10dp"
                     android:layout_marginEnd="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:divider="@android:drawable/button_onoff_indicator_off"></ListView>
+                    android:layout_marginBottom="10dp"></ListView>
 
             </com.google.android.material.card.MaterialCardView>
 
@@ -131,6 +134,7 @@
                 android:clickable="true"
                 android:elevation="?android:attr/windowTitleSize"
                 android:layoutDirection="rtl"
+                android:onClick="irCrearContactos"
                 android:src="@android:drawable/ic_input_add"
                 android:tint="@color/primaryText"
                 android:verticalScrollbarPosition="right"
