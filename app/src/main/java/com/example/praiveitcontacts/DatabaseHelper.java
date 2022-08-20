@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //1.1 - Contructor
     public DatabaseHelper(@Nullable Context context) {
-        super(context, "PraivateContactsDB_DEV", null, 1);
+        super(context, "PraivateContactsDB_DEV_umh", null, 1);
     }
 
     //1.2 - Crear tablas en db
@@ -38,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         String createTableContactos = "" +
                 "                CREATE TABLE Contactos ( " +
-                "                ID INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "                ID INTEGER PRIMARY KEY AUTOINCREMENT , " +
                 "                Nombre TEXT NOT NULL," +
                 "                Apellido TEXT NOT NULL," +
                 "                Genero TEXT NOT NULL, " +
@@ -124,7 +124,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         cv.put("Telefono", contactosModel.getTelefono());
         cv.put("TelefonoFijo", contactosModel.getTelefonoFijo());
         cv.put("Direccion", contactosModel.getDireccion());
-        cv.put("IdUserMaster", (Integer) null);
+        cv.put("IdUserMaster",contactosModel.getIdUsuarioMaster());
 
         long insert = db.insert("Contactos", null, cv);
         if(insert == -1){

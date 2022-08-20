@@ -26,7 +26,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="72dp"
-                    app:srcCompat="@drawable/logo" />
+                    app:srcCompat="@drawable/application" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -89,7 +89,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <FrameLayout
-                    android:id="@+id/fr_layout_registro"
+                    android:id="@+id/fr_layout_contacto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -180,10 +180,10 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
-                    android:id="@+id/btnEditarContacto"
+                    android:id="@+id/btnNuevoContacto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:onClick="crearUsuarioRegistro"
+                    android:onClick="crearContactoNuevo"
                     android:padding="10dp"
                     android:text="Crear Contacto"
                     android:textColor="@color/primaryText"
