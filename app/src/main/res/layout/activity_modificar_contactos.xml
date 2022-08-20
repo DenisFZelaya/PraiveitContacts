@@ -40,14 +40,14 @@
                     android:typeface="sans" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textFieldNombreRegistro"
+                    android:id="@+id/textFieldNombreContactoEditarr"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputNombreContacto"
+                        android:id="@+id/inputNombreContactoEditar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#fff"
@@ -56,14 +56,14 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textFieldApellidoRegistro"
+                    android:id="@+id/textFieldApellidoContactoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     app:startIconDrawable="@android:drawable/ic_menu_my_calendar">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputApellidoContacto"
+                        android:id="@+id/inputApellidoContactoEditar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#fff"
@@ -73,14 +73,14 @@
 
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textEmailRegistro"
+                    android:id="@+id/textEmailContactoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     app:startIconDrawable="@android:drawable/sym_action_email">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputEmailContacto"
+                        android:id="@+id/inputEmailContactoEditar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#fff"
@@ -89,7 +89,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <FrameLayout
-                    android:id="@+id/fr_layout_registro"
+                    android:id="@+id/fr_layout_editar_contacto"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -109,21 +109,21 @@
                             android:textSize="20sp" />
 
                         <RadioGroup
-                            android:id="@+id/radioGroupGeneroRegistro"
+                            android:id="@+id/radioGroupGeneroContactoEditar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
 
                             android:orientation="vertical">
 
                             <RadioButton
-                                android:id="@+id/radio_button_HombreContacto"
+                                android:id="@+id/radio_button_HombrContactoEditar"
                                 android:checked="false"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:text="Hombre" />
 
                             <RadioButton
-                                android:id="@+id/radio_button_MujerContacto"
+                                android:id="@+id/radio_button_MujerContactoEditar"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:checked="false"
@@ -135,13 +135,13 @@
                 </FrameLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textTelefoCelular"
+                    android:id="@+id/textTelefoCelularContactoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:startIconDrawable="@android:drawable/ic_lock_lock">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputTelefonoContacto"
+                        android:id="@+id/inputTelefonoContactoEditar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#fff"
@@ -150,13 +150,13 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textTelefonoFijo"
+                    android:id="@+id/textTelefonoFijoContactoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:startIconDrawable="@android:drawable/ic_lock_lock">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputTelefonoFijo"
+                        android:id="@+id/inputTelefonoFijoContactoEditar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#fff"
@@ -165,13 +165,13 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/textDireccion"
+                    android:id="@+id/textDireccionContactoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:startIconDrawable="@android:drawable/ic_lock_lock">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/inputDireccion"
+                        android:id="@+id/inputDireccionContactoEditar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="#fff"
@@ -186,7 +186,7 @@
 
 
                         <Button
-                            android:id="@+id/btnEditarContacto"
+                            android:id="@+id/btnEditarContactoEditar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
@@ -198,12 +198,11 @@
                             app:icon="@android:drawable/ic_menu_edit" />
 
                         <Button
-                            android:id="@+id/btnEliminarContacto"
+                            android:id="@+id/btnEliminarContactoEditar"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_weight="1"
-                            android:onClick="crearUsuarioRegistro"
                             android:padding="10dp"
                             android:text="Eliminar "
                             android:textColor="@color/primaryText"

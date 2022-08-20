@@ -38,8 +38,6 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         getSupportActionBar().hide();
 
-
-
         etUsu = findViewById(R.id.tiusuario_login);
         etContrasena = findViewById(R.id.tipass_login);
         sesionIniciadaComponent = findViewById(R.id.switch_sesion_iniciada);
@@ -109,7 +107,7 @@ public class LoginActivity extends AppCompatActivity {
                             System.out.println("incorrectos");
                             Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content), "Credenciales incorrectas", Snackbar.LENGTH_LONG);
                             // snackbar.setBackgroundTint(color(android.R.color.));
-                            snackbar.setBackgroundTint(Color.parseColor("#63a4ff"));
+                            snackbar.setBackgroundTint(Color.parseColor("#FF0000"));
                             snackbar.show();
                         } else {
                             // Todos bien
