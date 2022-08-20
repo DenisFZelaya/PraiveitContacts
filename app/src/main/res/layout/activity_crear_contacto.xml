@@ -138,7 +138,7 @@
                     android:id="@+id/textTelefoCelular"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:startIconDrawable="@android:drawable/ic_lock_lock">
+                    app:startIconDrawable="@android:drawable/sym_action_call">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputTelefonoContacto"
@@ -153,7 +153,7 @@
                     android:id="@+id/textTelefonoFijo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:startIconDrawable="@android:drawable/ic_lock_lock">
+                    app:startIconDrawable="@android:drawable/sym_action_call">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputTelefonoFijo"
@@ -168,7 +168,7 @@
                     android:id="@+id/textDireccion"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:startIconDrawable="@android:drawable/ic_lock_lock">
+                    app:startIconDrawable="@android:drawable/ic_dialog_map">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputDireccion"

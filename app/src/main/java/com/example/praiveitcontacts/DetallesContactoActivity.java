@@ -72,6 +72,10 @@ public class DetallesContactoActivity extends AppCompatActivity {
             imgContacto.setImageResource(R.drawable.pucca);
         }
 
+        if(contacto.getNombre().toLowerCase().equals("aaron")){
+            imgContacto.setImageResource(R.drawable.pocoyo);
+        }
+
 
 
         direccionMaps.setOnClickListener(new View.OnClickListener() {

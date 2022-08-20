@@ -56,6 +56,10 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
             imgContacto.setBackgroundResource(R.drawable.pucca);
         }
 
+        if(contactos.getNombre().toLowerCase().equals("aaron")){
+            imgContacto.setBackgroundResource(R.drawable.pocoyo);
+        }
+
         // Return the completed view to render on screen
         textViewNombreContacto.setOnClickListener(new View.OnClickListener() {
 
