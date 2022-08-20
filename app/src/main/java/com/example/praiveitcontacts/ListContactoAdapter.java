@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.praiveitcontacts.Models.Contactos;
@@ -34,7 +35,7 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
             System.out.println("convertViewId " + convertView.getId());
         }
         System.out.println("convertView " + convertView.toString());
-
+        ImageView imgContacto;
 
         // Get the data item for this position
         Contactos contactos = getItem(position);
@@ -43,10 +44,17 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
         TextView textViewNombreContacto = (TextView) convertView.findViewById(R.id.tvNombre);
         TextView textViewNumeroContacto = (TextView) convertView.findViewById(R.id.tvNumero);
         Button btnItem = (Button) convertView.findViewById(R.id.btnList);
+        imgContacto = (ImageView) convertView.findViewById(R.id.mtrl_list_item_icon);
 
         // Setear textview con datos de la charla
         textViewNombreContacto.setText(contactos.getNombre() + " " + contactos.getApellido());
         textViewNumeroContacto.setText(contactos.getTelefono());
+
+        if(contactos.getGenero().equals("H")){
+            imgContacto.setBackgroundResource(R.drawable.donatello);
+        } else {
+            imgContacto.setBackgroundResource(R.drawable.pucca);
+        }
 
         // Return the completed view to render on screen
         textViewNombreContacto.setOnClickListener(new View.OnClickListener() {
