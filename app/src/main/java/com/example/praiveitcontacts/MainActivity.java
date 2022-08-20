@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
 
         DatabaseHelper db = new DatabaseHelper(MainActivity.this);
 
-
         Bundle recibirIdUsuario= this.getIntent().getExtras();
         if (recibirIdUsuario != null) {
             idUsuario = recibirIdUsuario.getInt("idUsuario");
