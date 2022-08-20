@@ -14,6 +14,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/primaryLigth"
             android:orientation="vertical">
 
             <LinearLayout
@@ -26,7 +27,7 @@
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="72dp"
-                    app:srcCompat="@drawable/logo" />
+                    app:srcCompat="@drawable/icon_main" />
 
                 <TextView
                     android:id="@+id/textView"
@@ -35,6 +36,8 @@
                     android:text="Registrarse"
                     android:textAlignment="viewStart"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="#FFFFFF"
+                    android:textColorHint="#E3CFCF"
                     android:textSize="30sp"
                     android:textStyle="bold"
                     android:typeface="sans" />
@@ -187,7 +190,10 @@
                     android:onClick="crearUsuarioRegistro"
                     android:padding="10dp"
                     android:text="Crear cuenta"
-                    app:icon="@android:drawable/ic_input_add" />
+                    android:textColor="#FFFFFF"
+                    android:textColorLink="#AF9595"
+                    app:icon="@android:drawable/ic_input_add"
+                    app:iconTint="#FFFFFF" />
 
             </LinearLayout>
         </LinearLayout>
