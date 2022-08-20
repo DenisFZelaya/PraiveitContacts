@@ -32,7 +32,7 @@ public class activity_modificar_contactos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_modificar_contactos);
-        getActionBar().hide();
+        
 
         Bundle recibirIdUsuario= this.getIntent().getExtras();
         if (recibirIdUsuario != null) {
