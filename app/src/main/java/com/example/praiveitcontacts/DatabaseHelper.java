@@ -142,11 +142,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 " Apellido = '" + EditarContacto.getApellido() + "', "+
                 " Genero = '" + EditarContacto.getGenero() + "', "+
                 " Correo = '" + EditarContacto.getCorreo() + "', "+
-                " Telefono = '" + EditarContacto.getTelefono() + "' "+
-                " TelefonoFijo = '" + EditarContacto.getTelefonoFijo() + "' "+
-                " Direccion = '" + EditarContacto.getDireccion() + "' "+
-                " IdUserMaster = '" + EditarContacto.getIdUsuarioMaster() + "' "+
-                " WHERE Id = " + EditarContacto.getId() + ";";
+                " Telefono = '" + EditarContacto.getTelefono() + "', "+
+                " TelefonoFijo = '" + EditarContacto.getTelefonoFijo() + "', "+
+                " Direccion = '" + EditarContacto.getDireccion() + "', "+
+                " IdUserMaster = " + EditarContacto.getIdUsuarioMaster() + " "+
+                " WHERE ID = " + EditarContacto.getId() + ";";
 
         Cursor cursor = db.rawQuery(queryString, null);
 
@@ -160,7 +160,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Eliminar Contactos
     public boolean deleteContactoById(int id){
         SQLiteDatabase db = this.getWritableDatabase();
-        String queryString = "DELETE FROM Contactos WHERE Id = " + id;
+        String queryString = "DELETE FROM Contactos WHERE ID = " + id;
 
         Cursor cursor = db.rawQuery(queryString, null);
 
