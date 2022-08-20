@@ -27,6 +27,7 @@ public class RegistroActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -166,7 +167,7 @@ public class RegistroActivity extends AppCompatActivity {
             if(resultado){
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("Su usuario ha sido creado, será redirigido al login")
+                builder.setMessage("Su usuario " + nuevoUsuario.getUsuario() + "  ha sido creado, será redirigido al login")
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 onBackPressed();

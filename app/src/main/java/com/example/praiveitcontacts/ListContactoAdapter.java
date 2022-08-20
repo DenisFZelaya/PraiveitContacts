@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.praiveitcontacts.Models.Contactos;
@@ -34,7 +35,7 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
             System.out.println("convertViewId " + convertView.getId());
         }
         System.out.println("convertView " + convertView.toString());
-
+        ImageView imgContacto;
 
         // Get the data item for this position
         Contactos contactos = getItem(position);
@@ -43,12 +44,27 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
         TextView textViewNombreContacto = (TextView) convertView.findViewById(R.id.tvNombre);
         TextView textViewNumeroContacto = (TextView) convertView.findViewById(R.id.tvNumero);
         Button btnItem = (Button) convertView.findViewById(R.id.btnList);
+        imgContacto = (ImageView) convertView.findViewById(R.id.mtrl_list_item_icon);
 
         // Setear textview con datos de la charla
         textViewNombreContacto.setText(contactos.getNombre() + " " + contactos.getApellido());
         textViewNumeroContacto.setText(contactos.getTelefono());
 
+        if(contactos.getGenero().equals("H")){
+            imgContacto.setBackgroundResource(R.drawable.donatello);
+        } else {
+            imgContacto.setBackgroundResource(R.drawable.pucca);
+        }
+
         // Return the completed view to render on screen
+        textViewNombreContacto.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                System.out.println("Click en el texto para mostrar los detalles");
+                cargarDetallesContacto(contactos.getId());
+            }
+        });
 
         // Asignar evento a boton
         btnItem.setOnClickListener(new View.OnClickListener() {
@@ -63,11 +79,11 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
     }
 
     //1.3 Método para cargar una nueva actividad editar
-    protected void cargarPageEditar(int idCharla) {
+    protected void cargarPageEditar(int idContacto) {
         try {
-            System.out.println("Funcion editar charla: " + idCharla);
+            System.out.println("Funcion editar charla: " + idContacto);
             Bundle datoenvia = new Bundle();
-            datoenvia.putInt("idCharla", idCharla);
+            datoenvia.putInt("idContacto", idContacto);
 
             Intent intentEditarCharla = new Intent(getContext(), activity_modificar_contactos.class);
             intentEditarCharla.putExtras(datoenvia);
@@ -75,7 +91,20 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
         } catch (Exception ex) {
             System.out.println("Error cargando EditarCharla: " + ex.getMessage());
         }
+    }
 
+    protected void cargarDetallesContacto(int idContacto) {
+        try {
+            System.out.println("Funcion editar contacto: " + idContacto);
+            Bundle datoenvia = new Bundle();
+            datoenvia.putInt("idContacto", idContacto);
+
+            Intent intent = new Intent(getContext(), DetallesContactoActivity.class);
+            intent.putExtras(datoenvia);
+            getContext().startActivity(intent);
+        } catch (Exception ex) {
+            System.out.println("Error cargando detalles Contacto: " + ex.getMessage());
+        }
     }
 
 }
