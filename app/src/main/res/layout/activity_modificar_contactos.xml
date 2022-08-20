@@ -116,7 +116,7 @@
                             android:orientation="vertical">
 
                             <RadioButton
-                                android:id="@+id/radio_button_HombrContactoEditar"
+                                android:id="@+id/radio_button_HombreContactoEditar"
                                 android:checked="false"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
@@ -138,7 +138,7 @@
                     android:id="@+id/textTelefoCelularContactoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:startIconDrawable="@android:drawable/ic_lock_lock">
+                    app:startIconDrawable="@android:drawable/ic_menu_call">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputTelefonoContactoEditar"
@@ -153,7 +153,7 @@
                     android:id="@+id/textTelefonoFijoContactoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:startIconDrawable="@android:drawable/ic_lock_lock">
+                    app:startIconDrawable="@android:drawable/ic_menu_call">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputTelefonoFijoContactoEditar"
@@ -168,7 +168,7 @@
                     android:id="@+id/textDireccionContactoEditar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:startIconDrawable="@android:drawable/ic_lock_lock">
+                    app:startIconDrawable="@android:drawable/ic_menu_mylocation">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/inputDireccionContactoEditar"
@@ -186,16 +186,17 @@
 
 
                         <Button
-                            android:id="@+id/btnEditarContactoEditar"
+                            android:id="@+id/btnEditarContactoEditarC"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="5dp"
                             android:layout_weight="1"
-                            android:onClick="crearUsuarioRegistro"
+                            android:onClick="editarContacto"
                             android:padding="10dp"
                             android:text="Editar "
                             android:textColor="@color/primaryText"
-                            app:icon="@android:drawable/ic_menu_edit" />
+                            app:icon="@android:drawable/ic_menu_edit"
+                            app:iconTint="#FBFBFB" />
 
                         <Button
                             android:id="@+id/btnEliminarContactoEditar"
@@ -203,10 +204,12 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:layout_weight="1"
+                            android:onClick="crearUsuarioRegistro"
                             android:padding="10dp"
                             android:text="Eliminar "
                             android:textColor="@color/primaryText"
-                            app:icon="@android:drawable/ic_delete" />
+                            app:icon="@android:drawable/ic_delete"
+                            app:iconTint="#FFFFFF" />
 
 
                     </LinearLayout>
