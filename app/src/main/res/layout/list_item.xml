@@ -33,7 +33,7 @@
                     android:layout_height="50dp"
                     android:layout_marginStart="10dp"
                     android:layout_marginEnd="10dp"
-                    android:background="@drawable/ic_user_masculino"
+                    android:background="@drawable/man"
                     android:foregroundGravity="center"
                     android:padding="20dp" />
 
@@ -80,7 +80,7 @@
             android:layout_height="50dp"
             android:layout_gravity="right|center_horizontal"
             android:elevation="5dp"
-            android:foreground="@android:drawable/ic_menu_edit"
+            android:foreground="@drawable/update"
             android:foregroundGravity="center"
             android:foregroundTint="@color/elementosDiseno"
             android:foregroundTintMode="@color/elementosDiseno"
