@@ -4,7 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -17,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     private  int idUsuario;
     private TextView txTitulo;
+    private EditText etBuscar;
 
 
     @Override
@@ -37,6 +41,34 @@ public class MainActivity extends AppCompatActivity {
         txTitulo = findViewById(R.id.txTitulo);
         txTitulo.setText("Contactos de " + usuarioLogueado.getNombre());
 
+        etBuscar = (EditText)findViewById(R.id.etBuscar);
+
+        etBuscar.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void afterTextChanged(Editable s) {}
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start,
+                                          int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start,
+                                      int before, int count) {
+                if(s.length() != 0)
+                {
+                    System.out.println("onTextChangued " + s.toString().trim());
+
+                    listContactosBusqueda(s.toString().trim());
+                }else {
+                    listContactos();
+                }
+
+
+            }
+        });
+
     }
 
 
@@ -52,6 +84,15 @@ public class MainActivity extends AppCompatActivity {
         ListView lv_contactos = (ListView)findViewById(R.id.lv_contactos_list);
         DatabaseHelper db = new DatabaseHelper(MainActivity.this);
         ArrayList<Contactos> arrayContactos = (ArrayList<Contactos>) db.getAllContactos(idUsuario);
+        ListContactoAdapter adapter = new ListContactoAdapter(MainActivity.this, arrayContactos);
+        lv_contactos.setAdapter(adapter);
+
+    }
+
+    public void listContactosBusqueda(String buscarNombre){
+        ListView lv_contactos = (ListView)findViewById(R.id.lv_contactos_list);
+        DatabaseHelper db = new DatabaseHelper(MainActivity.this);
+        ArrayList<Contactos> arrayContactos = (ArrayList<Contactos>) db.getBuscarContactos(idUsuario, buscarNombre);
         ListContactoAdapter adapter = new ListContactoAdapter(MainActivity.this, arrayContactos);
         lv_contactos.setAdapter(adapter);
 
