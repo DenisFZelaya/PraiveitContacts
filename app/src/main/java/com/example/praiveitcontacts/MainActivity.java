@@ -25,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         DatabaseHelper db = new DatabaseHelper(MainActivity.this);
-        db.getAllContactos();
-        db.OpenDB();
+
 
         Bundle recibirIdUsuario= this.getIntent().getExtras();
         if (recibirIdUsuario != null) {
@@ -42,13 +41,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void onClickDb(View view) {
-        super.onResume();
-        System.out.println("Presionando boton");
-        DatabaseHelper db = new DatabaseHelper(MainActivity.this);
-        db.getAllContactos();
-        db.OpenDB();
-    }
 
     @Override
     protected void onStart(){
@@ -58,16 +50,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void listContactos(){
-        ListView lv_contactos = findViewById(R.id.lv_contactos_list);
-        DatabaseHelper db = new DatabaseHelper(this);
+        ListView lv_contactos = (ListView)findViewById(R.id.lv_contactos_list);
+        DatabaseHelper db = new DatabaseHelper(MainActivity.this);
         ArrayList<Contactos> arrayContactos = (ArrayList<Contactos>) db.getAllContactos(idUsuario);
-        ListViewAdapter adapter = new ListViewAdapter(this, arrayContactos);
+        ListContactoAdapter adapter = new ListContactoAdapter(MainActivity.this, arrayContactos);
         lv_contactos.setAdapter(adapter);
+
     }
 
     public  void irCrearContactos(View v){
         Bundle datoenvia = new Bundle();
-        datoenvia.putInt("Id", idUsuario);
+        datoenvia.putInt("idUsuario", idUsuario);
         Intent intentCrear = new Intent (MainActivity.this, activity_crear_contacto.class);
         intentCrear.putExtras(datoenvia);
         startActivity(intentCrear);

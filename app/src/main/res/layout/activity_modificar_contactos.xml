@@ -181,13 +181,15 @@
                         android:id="@+id/buttons_container"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:padding="10dp">
 
 
                         <Button
                             android:id="@+id/btnEditarContacto"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginEnd="5dp"
                             android:layout_weight="1"
                             android:onClick="crearUsuarioRegistro"
                             android:padding="10dp"
@@ -199,6 +201,7 @@
                             android:id="@+id/btnEliminarContacto"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="5dp"
                             android:layout_weight="1"
                             android:onClick="crearUsuarioRegistro"
                             android:padding="10dp"

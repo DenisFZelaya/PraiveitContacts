@@ -19,8 +19,5 @@ public class CreditosActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.creditos);
-
-        b = (Button) findViewById(R.id.button);
-
     }
 }

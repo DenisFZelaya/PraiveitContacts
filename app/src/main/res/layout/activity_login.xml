@@ -7,6 +7,7 @@
     android:orientation="vertical"
     tools:context=".LoginActivity">
 
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,13 +21,13 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    app:srcCompat="@drawable/logo">
+                    android:layout_height="287dp"
+                    app:srcCompat="@drawable/icon_main">
 
                 </ImageView>
 
@@ -36,19 +37,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="bottom"
-                android:orientation="vertical"
-                android:padding="2dp">
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <com.google.android.material.switchmaterial.SwitchMaterial
+                    android:id="@+id/switch_sesion_iniciada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:text="Mantener sesión iniciada" />
 
                 <com.google.android.material.card.MaterialCardView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:animateLayoutChanges="false"
                     app:cardCornerRadius="20dp"
                     app:cardUseCompatPadding="false">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="match_parent"
                         android:layout_gravity="bottom"
                         android:orientation="vertical">
 
@@ -56,7 +64,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:accessibilityLiveRegion="polite"
-                            android:hint="Login"
+                            android:hint="Usuario"
                             app:endIconMode="clear_text"
                             app:startIconDrawable="?android:attr/fingerprintAuthDrawable">
 
@@ -87,30 +95,30 @@
                             android:id="@+id/btn_inicio_login"
                             style="@android:style/Widget.Material.Light.Button"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="#952323"
-                            android:backgroundTint="#000000"
-                            android:shadowColor="#009688"
+                            android:layout_height="match_parent"
+                            android:background="@color/primary"
                             android:text="Inicar sesion"
+                            android:textColor="@color/primaryText"
+                            app:cornerRadius="25dp"
                             app:icon="@android:drawable/ic_menu_send"
-                            app:rippleColor="#8BC34A" />
+                            app:iconTint="#F6F6F6" />
 
-                        <Button
-                            android:id="@+id/btnRegistro"
-                            style="@style/Widget.MaterialComponents.Button.TextButton"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="10dp"
-                            android:onClick="Registro"
-                            android:text="No tienes cuenta? registrate" />
                     </LinearLayout>
 
 
                 </com.google.android.material.card.MaterialCardView>
 
+                <Button
+                    android:id="@+id/btnRegistro"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:onClick="Registro"
+                    android:text="No tienes cuenta? registrate" />
+
 
             </LinearLayout>
-
 
 
         </LinearLayout>
