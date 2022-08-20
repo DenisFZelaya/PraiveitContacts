@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/item_menu_creditos"
-        android:title="Créditos" >
-    </item>
+    <item
+        android:id="@+id/item_menu_creditos"
+        android:icon="@drawable/umh"
+        android:title="Créditos"></item>
+    <item
+        android:id="@+id/item_menu_cerrar_sesion"
+        android:icon="@android:drawable/ic_menu_close_clear_cancel"
+        android:title="Cerrar sesión"></item>
 </menu>
