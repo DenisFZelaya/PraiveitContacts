@@ -208,7 +208,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //Obtener Listado de Contactos
     public List<Contactos> getBuscarContactos(int id, String nombreBusqueda){
         List<Contactos> returnList = new ArrayList<>();
-        String queryString = "SELECT * FROM Contactos WHERE idUserMaster = " + id + " AND Nombre LIKE '%" + nombreBusqueda + "%' OR Apellido LIKE '%" + nombreBusqueda + "%' OR Telefono LIKE '%" + nombreBusqueda + "%' OR CORREO LIKE '%" + nombreBusqueda + "%'";
+        String queryString = "SELECT * FROM Contactos WHERE idUserMaster = " + id + " AND (Nombre LIKE '%" + nombreBusqueda + "%' OR Apellido LIKE '%" + nombreBusqueda + "%' OR Telefono LIKE '%" + nombreBusqueda + "%' OR CORREO LIKE '%" + nombreBusqueda + "%')";
         System.out.println(queryString);
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery(queryString, null);
