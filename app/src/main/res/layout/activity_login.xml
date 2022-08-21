@@ -87,7 +87,7 @@
                                             android:id="@+id/tiusuario_login"
                                             android:layout_width="match_parent"
                                             android:layout_height="wrap_content"
-                                            android:maxLength="10" />
+                                            />
                                     </com.google.android.material.textfield.TextInputLayout>
 
                                     <com.google.android.material.textfield.TextInputLayout
