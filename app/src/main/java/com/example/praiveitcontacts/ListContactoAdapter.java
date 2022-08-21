@@ -51,14 +51,27 @@ public class ListContactoAdapter extends ArrayAdapter<Contactos> {
         textViewNumeroContacto.setText(contactos.getTelefono());
 
         if(contactos.getGenero().equals("H")){
-            imgContacto.setBackgroundResource(R.drawable.donatello);
+            imgContacto.setBackgroundResource(R.drawable.man);
         } else {
-            imgContacto.setBackgroundResource(R.drawable.pucca);
+            imgContacto.setBackgroundResource(R.drawable.woman);
         }
 
         if(contactos.getNombre().toLowerCase().equals("aaron")){
             imgContacto.setBackgroundResource(R.drawable.pocoyo);
         }
+        if(contactos.getNombre().toLowerCase().equals("denis")){
+            imgContacto.setBackgroundResource(R.drawable.dona);
+        }
+        if(contactos.getNombre().toLowerCase().equals("kelly")){
+            imgContacto.setBackgroundResource(R.drawable.pucca);
+        }
+        if(contactos.getNombre().toLowerCase().equals("abner")){
+            imgContacto.setBackgroundResource(R.drawable.goku);
+        }
+        if(contactos.getNombre().toLowerCase().equals("nelly")){
+            imgContacto.setBackgroundResource(R.drawable.arenita);
+        }
+
 
         // Return the completed view to render on screen
         textViewNombreContacto.setOnClickListener(new View.OnClickListener() {

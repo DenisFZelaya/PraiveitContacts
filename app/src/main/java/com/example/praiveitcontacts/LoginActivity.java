@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.health.TimerStat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -25,6 +26,8 @@ import com.google.android.material.switchmaterial.SwitchMaterial;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -37,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        //Implementar Splash Screen
+
         getSupportActionBar().hide();
 
         etUsu = findViewById(R.id.tiusuario_login);
