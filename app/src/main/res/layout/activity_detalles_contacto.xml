@@ -86,7 +86,7 @@
                                         android:layout_height="50dp"
                                         android:layout_marginStart="10dp"
                                         android:layout_marginEnd="10dp"
-                                        android:background="@android:drawable/sym_action_chat"
+                                        android:background="@drawable/txtmsj"
                                         android:foregroundGravity="center"
                                         android:padding="20dp" />
 
@@ -164,7 +164,7 @@
                                         android:layout_height="50dp"
                                         android:layout_marginStart="10dp"
                                         android:layout_marginEnd="10dp"
-                                        android:background="@drawable/maps"
+                                        android:background="@drawable/mapa_border"
                                         android:foregroundGravity="center"
                                         android:padding="20dp" />
 
@@ -242,7 +242,7 @@
                                         android:layout_height="50dp"
                                         android:layout_marginStart="10dp"
                                         android:layout_marginEnd="10dp"
-                                        android:background="@drawable/whatsapp"
+                                        android:background="@drawable/what"
                                         android:foregroundGravity="center"
                                         android:padding="20dp" />
 
@@ -320,7 +320,7 @@
                                         android:layout_height="50dp"
                                         android:layout_marginStart="10dp"
                                         android:layout_marginEnd="10dp"
-                                        android:background="@android:drawable/ic_dialog_email"
+                                        android:background="@drawable/correo_border"
                                         android:foregroundGravity="center"
                                         android:padding="20dp" />
 
@@ -398,7 +398,7 @@
                                         android:layout_height="50dp"
                                         android:layout_marginStart="10dp"
                                         android:layout_marginEnd="10dp"
-                                        android:background="@android:drawable/sym_action_call"
+                                        android:background="@drawable/movilborder"
                                         android:foregroundGravity="center"
                                         android:padding="20dp" />
 
@@ -418,7 +418,7 @@
 
                                             android:maxLines="2"
                                             android:paddingEnd="16dp"
-                                            android:text="Llamar a télefono"
+                                            android:text="Llamar a Celular"
                                             android:textAppearance="?attr/textAppearanceBody2" />
 
                                         <TextView
@@ -476,7 +476,7 @@
                                         android:layout_height="50dp"
                                         android:layout_marginStart="10dp"
                                         android:layout_marginEnd="10dp"
-                                        android:background="@android:drawable/sym_action_call"
+                                        android:background="@drawable/telfijo"
                                         android:foregroundGravity="center"
                                         android:padding="20dp" />
 

@@ -80,7 +80,7 @@
             android:layout_height="50dp"
             android:layout_gravity="right|center_horizontal"
             android:elevation="5dp"
-            android:foreground="@drawable/update"
+            android:foreground="@drawable/editar_border"
             android:foregroundGravity="center"
             android:foregroundTint="@color/elementosDiseno"
             android:foregroundTintMode="@color/elementosDiseno"
