@@ -27,6 +27,7 @@ public class RegistroActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +73,14 @@ public class RegistroActivity extends AppCompatActivity {
             Email.setBackgroundColor(Color.parseColor("#ffffff"));
         }
 
+        if(User.getText().length() < 1){
+            User.setBackgroundColor(Color.parseColor("#ffb6c1"));
+            listErrores.add("Email vacío");
+        }else {
+            User.setBackgroundColor(Color.parseColor("#ffffff"));
+        }
+
+
         //Validar contraseña
         if(Contrasena.getText().toString().equals(RepeatContrasena.getText().toString())){
             if(Contrasena.getText().toString().length() > 0 && RepeatContrasena.getText().toString().length() > 0){
@@ -113,31 +122,6 @@ public class RegistroActivity extends AppCompatActivity {
         }
 
 
-
-
-
-
-
-        String usuarioShow =  "";
-        String usuarioName = "";
-
-        if(Apellido.getText().length() > 0){
-            usuarioShow = Apellido.getText().toString();
-        }
-
-        if(Nombre.getText().length() > 0){
-            usuarioName = Nombre.getText().charAt(0) + "";
-        }
-
-
-        User.setText(usuarioShow.toLowerCase(Locale.ROOT) + "" + usuarioName.toLowerCase(Locale.ROOT));
-
-        if(User.getText().length() < 1 ){
-            //
-            listErrores.add("User vacío");
-        }
-
-
         if(listErrores.size() > 0){
             // Datos incompletos
             AlertDialog.Builder builder = new AlertDialog.Builder(RegistroActivity.this);
@@ -166,7 +150,7 @@ public class RegistroActivity extends AppCompatActivity {
             if(resultado){
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setMessage("Su usuario ha sido creado, será redirigido al login")
+                builder.setMessage("Su usuario " + nuevoUsuario.getUsuario() + "  ha sido creado, será redirigido al login")
                         .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 onBackPressed();
