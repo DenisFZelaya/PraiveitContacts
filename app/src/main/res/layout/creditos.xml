@@ -95,7 +95,7 @@
                 android:layout_width="347dp"
                 android:layout_height="131dp"
                 android:layout_gravity="center"
-                app:srcCompat="@drawable/umhlogo" />
+                app:srcCompat="@drawable/logoumh" />
 
             <TextView
                 android:id="@+id/textView12"
